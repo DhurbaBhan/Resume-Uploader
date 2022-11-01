@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{%load static%}
+
+
+{% block title %}
+Candidate
+{% endblock title %}
+
+
+
+{% block content %}
+<div class="container">
+    <h1 class="alert-danger text-center">User Resume Detail</h1>
+    <div class="row">
+        <div class='col-sm-10 shadow p-5 offset-sm-1' >
+        <div class="text-center"><u>Resume</u></div>
+        <p class="float-end">Application No: {{forloop.counter }}</p><br>
+       
+        <p class="margin-right"><img src="{{user.profile_image.url}}" alt="" class="img-fluid img-thumbnail float-end mt-6" width='150' height='150'></p>
+        
+        <p>Name: {{user.name}}</p>
+        <p>Date of Birth: {{user.dob}}</p>
+        <p>Gender:{{user.gender}}</p>
+        <p>Address: {{user.locality}}, {{user.city}}</p>
+        <p>Mobile No: {{user.mobile}}</p>
+        <p>Email ID: {{user.email}}</p>
+        <p>Preferred Job Location: {{user.job_city}}</p>
+        
+        <p>Attachment: <a href="{{user.my_file.url}}" download>Download File</a></p>
+       
+        <div class="text-center">
+            <a href="{% url 'home' %}" class="btn btn-danger">Back to Home</a>
+        </div>
+    </div>
+    
+    
+</div>
+</div>
+{% endblock content %}
