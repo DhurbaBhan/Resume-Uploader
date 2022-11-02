@@ -23,6 +23,7 @@
       </ul>
     </div>
   </nav>
+  
   {%if msg %}
   {{msg}}
   {%endif%}
@@ -52,7 +53,7 @@
     <div class="col-sm-4">
       <h5 class="text-center mb-3"><u>List of Candidates</u></h5>
       {%for user in users%}
-      {{user.id}}: <a href="{% url 'user' user.id %}">{{user.name}}</a><hr>
+      {{forloop.counter}}: <a href="{% url 'user' user.id %}">{{user.name}}</a><hr>
       {%endfor%}
     </div>
   </div>

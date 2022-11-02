@@ -15,6 +15,7 @@
       <a class="navbar-brand" href="#">RESUME UPLOADER</a>
     </div>
   </nav>
+  <p class="btn btn-primary mt-2">You have to create an account first to perfom the functions of resume uploader.</p>
 
     <form action="{% url 'register' %}" method="POST" class="mt-5">
         {% csrf_token %}
@@ -22,15 +23,13 @@
         {{form.as_p}}
         <input type="submit" name="Register">
     </form>
-    <br>
     {% if success %}
     <p class='btn btn-success'>
     {{success}}
     </p>
     {% endif %}
     <br>
-
-    already have an account?<a href="{% url 'login' %}">Click Here</a>
+    <p class='btn btn-danger'> already have an account?</p><a href="{% url 'login' %}">Click Here</a>
 
 </body>
 </html>
